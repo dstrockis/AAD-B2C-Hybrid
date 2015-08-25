@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Azure AD B2C + B2E</h1>
+    @if (Request.IsAuthenticated)
+    {
+        <div>
+            <center>
+                    <h2>Welcome, @User.Identity.Name!</h2>
+            </center>
+        </div>
+    }
+    else
+    {
+        <div>
+            <center>
+                <input type="button" style="margin:10px;width:150px" class="btn btn-primary" onclick=" window.location.href='/Account/SignUpB2C' " value="Sign Up" />
+                <input type="button" style="margin:10px;width:150px" class="btn btn-primary" onclick="window.location.href='/Account/SignInB2C'" value="Sign In" />
+                <input type="button" style="margin:10px;width:250px" class="btn btn-primary" onclick="window.location.href='/Account/SignInWork'" value="Sign In with a Work Account" />
+            </center>
+
+        </div>
+    }
+</div>
